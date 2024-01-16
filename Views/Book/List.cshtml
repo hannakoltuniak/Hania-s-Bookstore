@@ -1,0 +1,23 @@
+﻿@model BookListViewModel
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Hania's Bookstore'</title>
+    </head>
+
+    <body>
+    <h1>@Model.CurrentGenre</h1>
+
+        @foreach(var book in Model.Books)
+        {
+            <div>
+                <h2>@book.Title</h2>
+                <h3>@book.Genre.Name</h3>
+                <h3>@book.Price.ToString("c")</h3>
+            </div>
+        }
+    </body>
+</html>

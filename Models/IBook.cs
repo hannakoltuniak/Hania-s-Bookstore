@@ -1,4 +1,4 @@
-﻿namespace Hania_s_Bookstore.Models
+﻿namespace HaniasBookstore.Models
 {
     public interface IBook //using for packing all interaction data  
     {
