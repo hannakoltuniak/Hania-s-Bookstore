@@ -1,23 +1,28 @@
 ﻿@model BookListViewModel
 
-<!DOCTYPE html>
+<h1>@Model.CurrentGenre</h1>
 
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Hania's Bookstore'</title>
-    </head>
+<div class="row row-cols-1 row-cols-md-3 g-4">
 
-    <body>
-    <h1>@Model.CurrentGenre</h1>
+    @foreach (var book in Model.Books)
+    {
+        <div class="col">
+            <div class="card pie-card">
+                <img src="@book.ThumbnailURL" class="card-img-top" alt="@book.Title">
+                <div class="card-body pie-button">
+                    <h4 class="d-grid">
+                    </h4>
 
-        @foreach(var book in Model.Books)
-        {
-            <div>
-                <h2>@book.Title</h2>
-                <h3>@book.Genre.Name</h3>
-                <h3>@book.Price.ToString("c")</h3>
+                    <div class="d-flex justify-content-between mt-2">
+                        <h2 class="text-start">
+                            <a class="pie-link">@book.Title</a>
+                        </h2>
+                        <h5 class="text-nowrap">
+                            @book.Price.ToString("c").Replace("zł", "$")
+                        </h5>
+                    </div>
+                </div>
             </div>
-        }
-    </body>
-</html>
+        </div>
+    }
+</div>

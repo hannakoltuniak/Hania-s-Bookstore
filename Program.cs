@@ -1,11 +1,17 @@
+using Hania_s_Bookstore.Models;
 using HaniasBookstore.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IGenre, MockupCategory>();
-builder.Services.AddScoped<IBook, MockupBook>();
+builder.Services.AddScoped<IGenre, GenreRepository>();
+builder.Services.AddScoped<IBook, BookRepository>();
 
 builder.Services.AddControllersWithViews(); //adding framework services which enables MVC in app
+builder.Services.AddDbContext<HaniasBookstoreDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:HaniasBookstoreDbContextConnection"]);
+});
 
 var app = builder.Build();
 
