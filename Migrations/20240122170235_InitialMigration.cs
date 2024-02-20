@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Hania_s_Bookstore.Migrations
+namespace HaniasBookstore.Migrations
 {
     public partial class InitialMigration : Migration
     {

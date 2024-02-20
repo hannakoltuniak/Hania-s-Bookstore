@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Hania_s_Bookstore.Migrations
+namespace HaniasBookstore.Migrations
 {
     [DbContext(typeof(HaniasBookstoreDbContext))]
     [Migration("20240122170235_InitialMigration")]

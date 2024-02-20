@@ -4887,13 +4887,13 @@ textarea.form-control-lg {
 .card-img,
 .card-img-top,
 .card-img-bottom {
-    width: 100%;
+    width: 60%;
 }
 
 .card-img,
 .card-img-top {
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
+    border-top-left-radius: calc(0.15rem - 0.75px);
+    border-top-right-radius: calc(0.15rem - 0.75px);
 }
 
 .card-img,

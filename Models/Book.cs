@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
+        public string? Author { get; set; }
         public Genre Genre { get; set; } = default!;
         public string? Description { get; set; }
         public float Price { get; set; }

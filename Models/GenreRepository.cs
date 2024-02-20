@@ -1,6 +1,6 @@
 ﻿using HaniasBookstore.Models;
 
-namespace Hania_s_Bookstore.Models
+namespace HaniasBookstore.Models
 {
     public class GenreRepository : IGenre
     {

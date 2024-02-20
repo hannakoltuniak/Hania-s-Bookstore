@@ -23,5 +23,14 @@ namespace HaniasBookstore.Controllers
             BookListViewModel bookListViewModel = new BookListViewModel(_book.AllBooks, "Fantasy");
             return View(bookListViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var book = _book.GetBookById(id);
+
+            if (book == null)
+                return NotFound();
+            return View(book);
+        }
     }
 }

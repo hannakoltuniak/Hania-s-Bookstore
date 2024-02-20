@@ -1,4 +1,3 @@
-using Hania_s_Bookstore.Models;
 using HaniasBookstore.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,5 +20,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 
 app.MapDefaultControllerRoute(); //enables app to handle incoming requests
+
+DbInitializer.Seed(app);
 
 app.Run();
