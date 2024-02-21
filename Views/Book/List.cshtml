@@ -15,10 +15,10 @@
 
                     <div class="d-flex justify-content-between mt-2">
                         <h2 class="text-start">
-                            <a class="pie-link">@book.Title</a>
+                            <a class="pie-link" asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a>
                         </h2>
                         <h5 class="text-nowrap">
-                            @book.Price.ToString("c").Replace("zł", "$")
+                            @book.Price.ToString("c")
                         </h5>
                     </div>
                 </div>

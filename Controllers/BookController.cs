@@ -20,7 +20,7 @@ namespace HaniasBookstore.Controllers
             //ViewBag.Title = "Available Books";
             //return View(_book.AllBooks);
 
-            BookListViewModel bookListViewModel = new BookListViewModel(_book.AllBooks, "Fantasy");
+            BookListViewModel bookListViewModel = new BookListViewModel(_book.AllBooks, "All Books");
             return View(bookListViewModel);
         }
 
