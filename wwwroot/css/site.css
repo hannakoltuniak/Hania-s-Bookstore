@@ -232,12 +232,12 @@ sup {
 }
 
 a {
-    color: #C87D52;
+    color: #081c15;
     text-decoration: underline;
 }
 
     a:hover {
-        color: #a06442;
+        color: #1b4332;
     }
 
     a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -1143,7 +1143,7 @@ progress {
 
     .row-cols-md-3 > * {
         flex: 0 0 auto;
-        width: 33.3333333333%;
+        width: 20%;
     }
 
     .row-cols-md-4 > * {
@@ -4887,8 +4887,8 @@ textarea.form-control-lg {
 .card-img,
 .card-img-top,
 .card-img-bottom {
-    width: 60%;
-    max-width: 100px;
+    width: 100%;
+    max-width: 350px;
     height: auto;
 }
 
