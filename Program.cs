@@ -6,6 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IGenre, GenreRepository>();
 builder.Services.AddScoped<IBook, BookRepository>();
 
+builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddControllersWithViews(); //adding framework services which enables MVC in app
 builder.Services.AddDbContext<HaniasBookstoreDbContext>(options =>
 {
@@ -15,6 +19,8 @@ builder.Services.AddDbContext<HaniasBookstoreDbContext>(options =>
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.UseSession();
 
 if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();

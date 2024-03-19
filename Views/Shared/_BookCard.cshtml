@@ -5,6 +5,7 @@
         <img src="@Model.CoverURL" class="card-img-top" alt="@Model.Title">
         <div class="card-body pie-button">
             <h4 class="d-grid">
+                <a class="btn btn-secondary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-bookId="@Model.Id"> + Add to cart</a>
             </h4>
 
             <div class="d-flex justify-content-between mt-2">

@@ -31,6 +31,9 @@ namespace HaniasBookstore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CoverURL")
                         .HasColumnType("nvarchar(max)");
 
