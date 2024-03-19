@@ -15,13 +15,32 @@ namespace HaniasBookstore.Controllers
             _genre = genre;
         }
 
-        public IActionResult List()
-        {
-            //ViewBag.Title = "Available Books";
-            //return View(_book.AllBooks);
+        //public IActionResult List()
+        //{
+        //    //ViewBag.Title = "Available Books";
+        //    //return View(_book.AllBooks);
 
-            BookListViewModel bookListViewModel = new BookListViewModel(_book.AllBooks, "All Books");
-            return View(bookListViewModel);
+        //    BookListViewModel bookListViewModel = new BookListViewModel(_book.AllBooks, "All Books");
+        //    return View(bookListViewModel);
+        //}
+
+        public ViewResult List(string genre)
+        {
+            IEnumerable<Book> books;
+            string? currentGenre;
+
+            if (string.IsNullOrEmpty(genre))
+            {
+                books = _book.AllBooks.OrderBy(b => b.Id);
+                currentGenre = genre;
+            }
+            else
+            {
+                books = _book.AllBooks.Where(b => b.Genre.Name == genre).OrderBy(b => b.Id);
+                currentGenre = _genre.AllGenres.FirstOrDefault(g => g.Name == genre)?.Name;
+            }
+
+            return View(new BookListViewModel(books,currentGenre));
         }
 
         public IActionResult Details(int id)
