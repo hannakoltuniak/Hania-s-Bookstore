@@ -12,6 +12,7 @@ builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews(); //adding framework services which enables MVC in app
+builder.Services.AddRazorPages();
 builder.Services.AddDbContext<HaniasBookstoreDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:HaniasBookstoreDbContextConnection"]);
@@ -27,6 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 
 app.MapDefaultControllerRoute(); //enables app to handle incoming requests
+app.MapRazorPages();
 
 DbInitializer.Seed(app);
 

@@ -3099,14 +3099,14 @@ textarea.form-control-lg {
 
 .btn-secondary {
     color: #000;
-    background-color: #FFD0C9;
-    border-color: #FFD0C9;
+    background-color: #40916c;
+    border-color: #40916c;
 }
 
     .btn-secondary:hover {
         color: #000;
-        background-color: #ffd7d1;
-        border-color: #ffd5ce;
+        background-color: #4B9D78;
+        border-color: #4B9D78;
     }
 
     .btn-check:focus + .btn-secondary, .btn-secondary:focus {
