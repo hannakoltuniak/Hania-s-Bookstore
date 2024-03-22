@@ -32,5 +32,10 @@ namespace HaniasBookstore.Models
         {
             return _haniasBookstoreDbContext.Books.FirstOrDefault(b => b.Id == id);
         }
+
+        public IEnumerable<Book> SearchBooks(string searchQuery)
+        {
+            return _haniasBookstoreDbContext.Books.Where(b => b.Title.Contains(searchQuery));
+        }
     }
 }
