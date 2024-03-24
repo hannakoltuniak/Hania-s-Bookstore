@@ -51,5 +51,10 @@ namespace HaniasBookstore.Controllers
                 return NotFound();
             return View(book);
         }
+
+        public IActionResult Search()
+        {
+            return View();
+        }
     }
 }

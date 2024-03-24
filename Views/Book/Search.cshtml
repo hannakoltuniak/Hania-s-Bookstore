@@ -1,0 +1,42 @@
+﻿<div class="my-5">
+    <h3 class="mb-4">
+        Enter your search query
+    </h3>
+    <input id="txtBookTitle" type="text" />
+    <button id="searchButton" class="btn btn-secondary">Search</button>
+</div>
+<table id="tblBooks" cellpadding="0" cellspacing="0">
+    <tbody></tbody>
+</table>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+      $("button").click(function(){
+            var searchQuery = $.trim($("#txtBookTitle").val());
+            $("table tbody").html("");
+            $.ajax({
+                type: "POST",
+                url: "/api/Search",
+                data: "\"" + searchQuery + "\"",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (books) {
+                    var table = $("#tblBooks");
+                    table.find("tr:not(:first)").remove();
+                    $.each(books, function (i, book) {
+                        $("tbody").append($("<tr>"));
+                        appendElement = $("tbody tr").last();
+                        appendElement.append($("<td>").html('<img src=' + book.coverUrl + '>'));
+                        appendElement.append($("<td>").html('<a href="/book/details/' + book.id + '">' + book.title + '</a>'));
+                        appendElement.append($("<td>").html(book.price));
+                    });
+                },
+                error: function (xhr, status, error) {
+                        console.log(xhr)
+                }
+            });
+          });
+        });
+
+</script>
