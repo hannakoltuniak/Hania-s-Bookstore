@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace HaniasBookstore.Models
 {
-    public class HaniasBookstoreDbContext : DbContext
+    public class HaniasBookstoreDbContext : IdentityDbContext
     {
         public HaniasBookstoreDbContext(DbContextOptions<HaniasBookstoreDbContext> options) : base(options)
         {

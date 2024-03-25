@@ -3118,8 +3118,8 @@ textarea.form-control-lg {
 
     .btn-check:checked + .btn-secondary, .btn-check:active + .btn-secondary, .btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
         color: #000;
-        background-color: #ffd9d4;
-        border-color: #ffd5ce;
+        background-color: #4B9D78;
+        border-color: #4B9D78;
     }
 
         .btn-check:checked + .btn-secondary:focus, .btn-check:active + .btn-secondary:focus, .btn-secondary:active:focus, .btn-secondary.active:focus, .show > .btn-secondary.dropdown-toggle:focus {

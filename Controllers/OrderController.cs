@@ -1,8 +1,10 @@
 ﻿using HaniasBookstore.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaniasBookstore.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrder order;
