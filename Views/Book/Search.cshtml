@@ -1,18 +1,25 @@
-﻿<div class="my-5">
-    <h3 class="mb-4">
-        Enter your search query
-    </h3>
-    <input id="txtBookTitle" type="text" />
-    <button id="searchButton" class="btn btn-secondary">Search</button>
-</div>
+﻿<br />
+<br />
+<br />
+<br />
+  Enter your search query:
+<input id="txtBookTitle" type="text" />
+<button id="searchButton">Search</button>
+<br />
+<br />
 <table id="tblBooks" cellpadding="0" cellspacing="0">
+    <tr>
+        @* <th style="width: 120px"></th>
+        <th style="width: 120px">Name</th>
+        <th style="width: 90px">Price</th> *@
+    </tr>
     <tbody></tbody>
 </table>
 
 <script type="text/javascript">
 
-    $(document).ready(function(){
-      $("button").click(function(){
+    $(document).ready(function () {
+        $("button").click(function () {
             var searchQuery = $.trim($("#txtBookTitle").val());
             $("table tbody").html("");
             $.ajax({
@@ -27,16 +34,15 @@
                     $.each(books, function (i, book) {
                         $("tbody").append($("<tr>"));
                         appendElement = $("tbody tr").last();
-                        appendElement.append($("<td>").html('<img src=' + book.coverUrl + '>'));
-                        appendElement.append($("<td>").html('<a href="/book/details/' + book.id + '">' + book.title + '</a>'));
-                        appendElement.append($("<td>").html(book.price));
+                        appendElement.append($("<td>").html('<img src=' + book.coverURL + 'width=250'));
+                        appendElement.append($("<td>").html('<h2><a href="/book/details/' + book.id + '" class="pie-link">' + book.title + '</a></h2>'));
                     });
                 },
                 error: function (xhr, status, error) {
-                        console.log(xhr)
+                    console.log(xhr)
                 }
             });
-          });
         });
+    });
 
 </script>
